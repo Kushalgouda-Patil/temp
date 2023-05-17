@@ -1,0 +1,170 @@
+Write a C++ program to model a point object in a 2D plane, 
+it is described by x and y coordnates.
+
+Perform the following to model point object:
+1. Apply default, parameterized and copy constructor
+2. Write a function 
+	to move the point object in a 2D plane
+	to reset the point
+	to print the point
+	to create a new point object
+	to print the given object
+	to perform operation  on collection (array) ofobjects (void printPoints(Point points[])
+	destructor	
+
+	Note: Demonstrate array and array of objects before the demo of above problem
+/*
+//Array Demo
+
+/*
+int main(){
+//one dimensional array
+int data[]={1,2,3,4,5};// can be read from the user:cin
+//print data
+int i=0;
+for(i=0;i<5;i++){
+ cout<<data[i]<<endl;
+}
+cout<<endl;
+//2-D array
+int data1[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+int j,k;
+for(j=0;j<3;j++){
+    for(k=0;k<3;k++){
+        cout<<data1[j][k]<<"\t";
+    }
+    cout<<"\n";
+}
+return 0;
+}
+*/
+//Demo: array of objects
+class A{
+public:
+    int a;
+    A(){ //default constructor
+    this->a=0;
+    }
+    A(int a){
+    this->a=a;
+    }
+    //print array of objects
+    void printA(A obj[],int n){
+    int i=0;
+    for(i=0;i<n;i++){
+        cout<<obj[i].a<<endl;
+    }
+    }
+};
+int main(){
+A obj;
+A obj1(1),obj2(2),obj3(3); //Creating array elements
+A objects[]={obj1,obj2,obj3}; //creating array of objects
+
+obj.printA(objects,3);
+
+
+return 0;
+}
+
+*/
+
+=====================================================================
+//ADT (Abstract Data Type: Wite only data and function prototype in the class definition and define constructor
+//and functions outside the class)
+class Point{
+public:
+    int xCoordinate;
+    int yCoordinate;
+    Point();
+    Point(int xCoordinate,int yCoordinate);
+    Point(const Point &p);
+    void movePoint(int a, int b);
+    void resetPoint();
+    void printPoint();
+    Point getPoint();
+    void printPoint(Point p);
+    void printPoints(Point points[], int n); 	
+
+};
+Point::Point(){
+this->xCoordinate=0;
+this->yCoordinate=0;
+}
+Point::Point(int xCoordinate,int yCoordinate){
+this->xCoordinate=xCoordinate;
+this->yCoordinate=yCoordinate;
+}
+Point::Point(const Point &p){
+this->xCoordinate=p.xCoordinate;
+this->yCoordinate=p.yCoordinate;
+}
+void Point::movePoint(int a, int b){
+xCoordinate+=a;
+yCoordinate+=b;
+}
+void Point::resetPoint(){
+this->xCoordinate=0;
+this->yCoordinate=0;
+}
+void Point::printPoint(){
+cout<<"x:"<<xCoordinate<<" y:"<<yCoordinate<<endl;
+}
+Point Point::getPoint(){
+int x,y;
+cout<<"Enter coordinates x and y"<<endl;
+cin>>x>>y;
+Point newPoint(x,y);
+
+return newPoint;
+}
+void Point::printPoint(Point p){
+cout<<p.xCoordinate<<":"<<p.yCoordinate<<endl;
+}
+void Point::printPoints(Point points[], int n){
+int i;
+for(i=0;i<n;i++){
+    points[i].printPoint();
+}
+int main(){
+    Point point(10,10);
+    point.printPoint();
+    Point p1(2,3),p2(3,2),p3(4,5);
+    Point points[]={p1,p2,p3}; //Point array
+    int i;
+    for(i=0;i<3;i++){
+        points[i].printPoint();
+    }
+    for(i=0;i<3;i++){
+        points[i].resetPoint();
+    }
+    for(i=0;i<3;i++){
+
+        points[i].printPoint();
+    }
+    int choice;
+        cout<<"Enter the point to move 1, 2, 3?"<<endl;
+        cin>>choice;
+
+    for(i=0;i<3;i++){
+
+        if(choice==1)
+            points[0].movePoint(2,3);
+        else if(choice==2)
+            points[1].movePoint(5,3);
+        else
+            points[2].movePoint(7,3);
+    }
+    for(i=0;i<3;i++){
+
+        points[i].printPoint();
+    }
+    Point p5=point.getPoint();
+    point.printPoint(p5);
+
+    cout<<"Passing array of points to function"<<endl;
+    point.printPoints(points,3);	
+
+    return 0;
+}
+=========================================================================

@@ -1,0 +1,184 @@
+1. Function in namespace, the class alsocan be defined in the namespace
+2. Pass by value or pass by reference
+3. Overloaded functions: static polymorphism
+4. inline functions : Discuss theory before demo
+5. Function overloading: different return type and
+	type and number of parameters same
+	The different return type is not sufficient for function overloading   
+6. Demo: math library (#include<math.h>). The students can explore more math unctions
+  
+//14-04-2023
+//Demo to include function in namespace
+/*namespace mySpace1{
+
+int a;
+void print(){
+cout<<"mySpace1"<<endl;
+}
+}
+namespace mySpace2{
+
+int a;
+void print(){
+cout<<"mySpace2"<<endl;
+}
+}
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    mySpace1::a=100;
+    cout<<mySpace1::a<<endl;
+    mySpace1::print();
+    mySpace2::print();
+    return 0;
+}
+*/
+//Demo: call by Value
+/*
+void fun1(int data){
+data+=10; //the data changed inside the function only
+           //The change to data is not visible outside the function
+
+cout<<"data="<<data<<endl;
+}
+int main(){
+int a=10;
+cout<<"Before function call"<<endl;
+cout<<"a="<<a<<endl;
+fun1(a);
+cout<<"After function call"<<endl;
+cout<<"a="<<a<<endl;
+return 0;
+}
+*/
+//Demo: pass by reference: '&' address operator
+/*
+void fun1(int& data){ //The '&' operator makes data
+                       // pass by reference. The changes to 'data' is visible outside the
+                       //function
+data+=10;
+}
+int main(){
+int a=10;
+cout<<"Before function call"<<endl;
+cout<<"a="<<a<<endl;
+cout<<"After function call"<<endl;
+fun1(a);
+cout<<"a="<<a<<endl;
+return 0;
+}
+*/
+//Demo: Overloaded functions: static polymorphism
+//Definition: The unction name is same and
+//The function parameters different in number or type
+/*
+int addNum(int num1, int num2){
+cout<<"Integer sum"<<endl;
+return num1+num2;
+}
+float addNum(float num1, float num2){
+cout<<"Float sum"<<endl;
+return num1+num2;
+}
+double addNum(double num1, double num2){
+cout<<"Double sum"<<endl;
+return num1+num2;
+}
+//to illustrate different type of parameter
+void addNum(string str){
+    cout<<"Hello\t"<<str<<endl;
+}
+int main(){
+
+cout<<addNum(10,10)<<endl;
+cout<<addNum(4.5f,4.6f)<<endl; //Because default floating point type is double
+cout<<addNum(10.2,10.2)<<endl;// to pass floating point values,the 'f' to be appended
+addNum("Abhay");
+
+return 0;
+}
+*/
+//Demo: Another example of pass by reference
+/*
+void changeData(int& a){
+
+a=a+10;
+}
+void changeData1(int a){
+a=a+10;
+}
+int main(){
+int x=10;
+cout<<"Before fun call"<<endl;
+cout<<"x="<<x<<endl;
+
+changeData1(10);
+
+cout<<"After fun call"<<endl;
+cout<<"x="<<x<<endl;
+
+cout<<"Before fun call"<<endl;
+cout<<"x="<<x<<endl;
+
+changeData(x);
+
+cout<<"After fun call"<<endl;
+cout<<"x="<<x<<endl;
+
+return 0;
+}
+*/
+//inline functions : Discuss theory before demo
+//It can be a different example
+/*
+inline void sayHello(string name){
+
+cout<<"Hello " <<name<<endl;
+}
+int main(){
+
+sayHello("cpp");
+
+return 0;
+}
+*/
+//Function overloading: different return type and
+//type and number of parameters same
+//The different return type is not sufficient for function overloading
+/*
+int division(int a, int b){
+int result=a/b;
+return result;
+}
+//ERROR
+double  division(int a, int b){
+double result=a/b;
+return result;
+}
+
+int main(){
+
+std::cout<<division(10,2)<<endl;
+
+return 0;
+}
+*/
+//Demo: math library. The student can explore
+// more math functions and apply to solve the problem
+//#include<math.h>
+/*
+int main(){
+
+int x1,y1,x2,y2;
+
+x1=10;y1=10; x2=20;y2=20;
+
+int y=2;
+
+int d=sqrt(pow((x2-x1),2)+pow((y2-y1),2));
+cout<<"distance="<<d<<endl;
+
+return 0;
+}
+*/

@@ -1,0 +1,233 @@
+#include <iostream>
+
+using namespace std;
+
+/*
+//Hello World Program
+//Discuss: iostream, cout, cin, endl constructs
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}
+*/
+/*
+//Demo of cin
+//Adding two numbers
+//
+int main(){
+    int num1, num2, sum=0;
+cout<<"Enter num1"<<endl;
+cin>>num1;
+cout<<"Enter num2"<<endl;
+cin>>num2;
+sum=num1+num2;
+cout<<"sum="<<sum<<endl;
+
+return 0;
+}
+*/
+/*
+//Reading a string literal and print
+int main(){
+string name="";
+cout<<"Enter name"<<endl;
+cin>>name;
+cout<<"Name is "<<name<<endl;
+
+return 0;
+}
+*/
+/*
+//Namespace Demo
+namespace space1{
+int a;
+}
+namespace space2{
+int a;
+}
+using namespace space1;
+using namespace space2;
+
+int main(){
+
+space2::a=100;
+
+ //a=10;
+//cout<<a<<endl;
+cout<<space2::a<<endl;
+return 0;
+
+}
+*/
+
+//Basics
+/*
+int main(){
+int num1, num2, sum;
+string name;
+cout<<"Enter Num1 num2"<<endl;
+cin>>num1>>num2;
+sum=num1+num2;
+cout<<"sum="<<sum<<"\n";
+cout<<"Enter your name\n";
+cin>>name;
+cout<<"The entered name"<<name<<endl;
+
+return 0;
+}
+*/
+// Discuss the general syntax to create in C++: Refer Chapter 2 ppt
+// Access specifier: demo of private and public. The protected can be discussed in inheritance
+/*
+class A{
+int a;
+
+public:
+    void setA(int x){
+    a=x;
+    }
+    int getA(){
+    return a;
+    }
+    void printA(){
+    cout<<"a="<<a<<endl;
+    }
+
+};
+int main(){
+
+//create object
+A obj;
+obj.setA(10);
+int data=obj.getA();
+cout<<data<<endl;
+cout<<obj.getA()<<endl;
+
+return 0;
+}
+*/
+//Modeling Car
+/*
+class Car{
+public:
+    int carNo;
+    string make;
+    string model;
+    int speed;
+    string color;
+    //Default constructor
+    Car(){
+    carNo=0;
+    make="";
+    model="";
+    speed=0;
+    color="";
+    }
+   //parameterized constructor
+    Car(int n, string m, string m1,int s, string c):carNo(n),make(m),model(m1),speed(s),color(c)
+    {
+
+    }
+    Car(int n,string m):carNo(n),model(m){}
+    void printCar(){
+    cout<<"Car details"<<endl;
+    cout<<carNo<<":"<<make<<":"<<model<<":"<<speed<<":"<<color<<endl;
+    }
+};
+int main(){
+Car car(1234,"TATA","Altroz",0,"white");
+car.printCar();
+
+car.speed=100;
+car.printCar();
+//other object
+
+Car car1;
+car1.printCar();
+//other object
+
+Car car2(4567,"Tiago");
+car2.printCar();
+
+return 0;
+}
+*/
+//Namespace demo
+/*
+namespace space1{
+int a;
+
+}
+
+namespace space2{
+int a;
+}
+using namespace space1;
+using namespace space2;
+int main(){
+space1::a=10;
+
+return 0;
+}
+*/
+//pass by value and reference
+/*
+void changeData(int a){
+a+=100;
+}
+void changeData1(int &a){
+
+a+=10;
+
+}
+int main(){
+int x;
+x=10;
+cout<<"Before fun call"<<endl;
+cout<<x<<endl;
+changeData(x);
+cout<<"After fun call"<<endl;
+cout<<x<<endl;
+
+cout<<"************************************"<<endl;
+
+cout<<"Before fun call"<<endl;
+cout<<x<<endl;
+changeData1(x);
+cout<<"After fun call"<<endl;
+cout<<x<<endl;
+
+
+return 0;
+}
+*/
+//Overload Demo
+/*
+int add(int a, int b){
+cout<<"Add int"<<endl;
+return a+b;
+}
+double add(double a, double b){
+    cout<<"Add double"<<endl;
+return a+b;
+}
+int main(){
+
+cout<<add(10,10)<<endl;
+cout<<add(10.0,10.0)<<endl;
+return 0;
+}
+*/
+/*
+class Test{
+public:
+    int a;
+
+};
+int main(){
+Test t;
+cout<<t.a<<endl;
+return 0;
+}
+*/

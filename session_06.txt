@@ -1,0 +1,140 @@
+/* 2D object array demo*/
+class Point{
+public:
+    int xCoordinate;
+    int yCoordinate;
+    //Point points[3];
+    static int objCount;
+    Point(){
+    cout<<"object"<<endl;
+    objCount++;
+    }
+    Point(int xCoordinate,int yCoordinate){
+    this->xCoordinate=xCoordinate;
+    this->yCoordinate=yCoordinate;
+    objCount++;
+    }
+    void printPoint(){
+    cout<<xCoordinate<<":"<<yCoordinate<<endl;
+    }
+    void printPoint(Point points[][3]){
+    int i,j;
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            //points[i][j].xCoordinate++;
+            points[i][j].printPoint();
+        }
+    }
+    }
+    void printPoint(Point points[], int n){
+    int i;
+    for(i=0;i<n;i++){
+        points[i].printPoint();
+    }
+    }
+};
+int Point::objCount=0;
+int main(){
+Point p1(10,10);
+int i;
+p1.printPoint();
+Point p2(1,2),p3(2,3),p4(4,5);
+//Point points[]={p2,p3,p4};
+Point points[]={Point(1,2),Point(2,3),Point(3,4)};
+for(i=0;i<3;i++){
+    points[i].printPoint();
+}
+cout<<"From printPoint(array)"<<endl;
+p1.printPoint(points,3);
+cout<<Point::objCount++<<endl;
+cout<<"=========="<<endl;
+Point p5(1,2),p6(2,3),p7(4,5), p8(1,2),p9(2,3),p10(4,5),p11(1,2),p12(2,3),p13(4,5);
+//2D array of points
+Point points1[3][3]={{p5,p6,p7},{p8,p9,p10},{p11,p12,p13}};
+p1.printPoint(points1);
+cout<<"=========="<<endl;
+cout<<Point::objCount++<<endl;
+return 0;
+}
+==================================================================================
+/* static: data and functions*/
+
+/* C++ code to print number of objects created*/
+class Point{
+public:
+    int xCoordinate;
+    int yCoordinate;
+
+    static int objCount; //declare
+
+    Point(){
+     objCount++; //increment
+    }
+    Point(int xCoordinate,int yCoordinate){
+    this->xCoordinate=xCoordinate;
+    this->yCoordinate=yCoordinate;
+    objCount++;
+    }
+    void printPoint(){
+    cout<<xCoordinate<<":"<<yCoordinate<<endl;
+    }
+};
+int Point::objCount=0; //Define
+int main(){
+Point p1;
+Point(1,2);
+cout<<"No of points:"<<p1.objCount<<endl;
+cout<<"No of points:"<<Point::objCount<<endl;
+return 0;
+}
+=====================================================================
+/* Consider a student object described as Student(rollNo, name, collegeNAme)
+Define a c++ class to model the student object in such a way that
+the college name can be modified across the student objects
+*/
+
+class Student{
+public:
+    int rollNo;
+    string name;
+    static string collegeName; //declare
+    Student(){
+    cout<<"default constructor"<<endl;
+    collegeName="ABV";
+    }
+    Student(int rollNo, string name,string collegeName){
+    this->rollNo=rollNo;
+    this->name=name;
+    //this cannot be used with static member
+    collegeName=collegeName;
+    }
+    static string getCollegeName(){
+    return collegeName;
+    }
+    void printStudent(){
+    //non-static function can access static member
+    cout<<rollNo<<":"<<collegeName<<endl;
+    }
+    static void diplayStudent(){
+    //static function cannot access non-static member
+    //cout<<rollNo<<":"<<collegeName<<endl;
+    cout<<collegeName<<endl;
+    }
+};
+string Student::collegeName="SoCSE"; //Define
+int main(){
+//Student s0;
+//cout<<s0.collegeName<<endl;
+Student s(501,"a","kleit"); //No meaning of static member initialization
+cout<<s.collegeName<<endl;
+s.collegeName="BVBCET"; //object can access the static variable
+Student s1(524,"b","KLE Tech");//No meaning
+cout<<s1.collegeName<<endl;
+s1.printStudent();
+
+cout<<Student::collegeName<<endl;//access static member through class name
+//calling static function
+cout<<Student::getCollegeName()<<endl;
+return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////
