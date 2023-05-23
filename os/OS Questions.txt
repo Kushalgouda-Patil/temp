@@ -1,0 +1,29 @@
+QUESTIONS
+
+1. Explain in brief the 5 services provided by the OS and explain how much each creates convenience for users.In which cases would it be impossible for the user level programs provide these services? explain in brief   6m
+
+2. Answer the following with respect to threads:
+  i) What resources are used when a thread is created? How they differ from used when process is created?
+  ii) Can a multithreaded solution using multiple user level thresds achieve better performance on a multiprocess system than a single process system justify
+  iii) Provide 2 programming examples in which multithreding doesnot provide better performance than an single threaded solution.
+
+3. Explain the different methods of IPC. Write the definition of system call used for the same with example.
+
+4. Draw the layered architecture of UNIX in detail and explain
+
+5. What are the main advantages of layered approach to the OS design and what are its disadvantages.
+
+6. Write the syntax for different exec system call.(header files). Write the code snippet to demonstrate exec syatem call. Diff between fork and exec sys call. 6m
+
+7. How each process is identified. Where the info of each process will be stored. List the imp and default processes used in OS. 6m
+
+8. What are the necessary conditions for critical section problem solution . Explain the hardware solution. What are advantages and disadvantages of this solution. 8m
+
+9. all scheduling algorithms (10m 1 q)
+
+10. Differentiate b/w pipe and fifo. Write c/c++ prog to send a variable x from parent to child over a pipe . Child computes an equation y=3x+4
+
+11. Explain the software soln for solving criticcal section problem and prove it (code also) 10m.
+
+12.  model qp isa1 (lesson plan): 1a,1c,2b,3b
+     model qp esa (lesson plan) : 1b,1c,2b
